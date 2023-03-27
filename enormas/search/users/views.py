@@ -13,9 +13,7 @@ from .serializers import CreateUserSerializer, UserSerializer, DataSerializer
 class UserViewSet(mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
-    """
-    Updates and retrieves user accounts
-    """
+    """Updates and retrieves user accounts"""
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (IsUserOrReadOnly,)
@@ -23,15 +21,10 @@ class UserViewSet(mixins.RetrieveModelMixin,
 
 class UserCreateViewSet(mixins.CreateModelMixin,
                         viewsets.GenericViewSet):
-    """
-    Creates user accounts
-    """
+    """Creates user accounts"""
     queryset = User.objects.all()
     serializer_class = CreateUserSerializer
     permission_classes = (AllowAny,)
-
-
-
 
 
 class ProductViewSet(viewsets.ViewSet):
@@ -44,8 +37,7 @@ class ProductViewSet(viewsets.ViewSet):
     """
     
     def list(self, request):
-        """
-        Retrieve a list of products.
+        """Retrieve a list of products.
 
         Args:
             request (HttpRequest): The HTTP request object.
