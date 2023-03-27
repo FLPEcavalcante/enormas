@@ -58,25 +58,25 @@ class ProductViewSet(viewsets.ViewSet):
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
 
-# class UpdateSpider(APIView):
-#     """A class-based view for updating the Scrapy spider.
+class UpdateSpider(APIView):
+    """A class-based view for updating the Scrapy spider.
 
-#     Attributes:
-#         get (function): A function to handle the GET request to update the spider.
+    Attributes:
+        get (function): A function to handle the GET request to update the spider.
 
-#     Returns: Response: A response object containing the output of the spider update process.
-#     """
+    Returns: Response: A response object containing the output of the spider update process.
+    """
 
-#     def get(self, request, format=None):
-#         """Handle GET request to update the Scrapy spider.
+    def get(self, request, format=None):
+        """Handle GET request to update the Scrapy spider.
 
-#         Args:
-#             request (HttpRequest): The HTTP request object.
-#             format (str, optional): The format of the response data. Defaults to None.
+        Args:
+            request (HttpRequest): The HTTP request object.
+            format (str, optional): The format of the response data. Defaults to None.
 
-#         Returns:
-#             Response: A response object containing the output of the spider update process.
-#         """
-#         command = 'scrapy runspider spider/spider_files/script.py'
-#         output = subprocess.check_output(command.split())
-#         return Response(output.decode())
+        Returns:
+            Response: A response object containing the output of the spider update process.
+        """
+        command = 'scrapy runspider enormas/search/spider/spider/script.py'
+        output = subprocess.check_output(command.split())
+        return Response(output.decode())
